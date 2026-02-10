@@ -1,24 +1,24 @@
 
-export const CLINIC_SMILECRAFT = {
-  name: "SmileCraft Aesthetic Dental Studio",
-  tagline: "Smile Design. Cosmetic Precision.",
-  phone: "+91 98410 33445",
-  phoneFormatted: "919841033445",
-  whatsapp: "+919841033445",
-  email: "consult@smilecraftstudio.com",
-  address: "Plot 18, Dr. Radha Krishnan Salai, Mylapore, Chennai, Tamil Nadu 600004",
+
+export const CLINIC_INFO = {
+  name: "BrightSmile Family Dental Care",
+  tagline: "Gentle, Honest & Complete Dental Care.",
+  phone: "+91 98845 77889",
+  phoneFormatted: "919884577889",
+  whatsapp: "+919884577889",
+  email: "hello@brightsmilechennai.com",
+  address: "No. 21, 1st Main Road, Velachery, Chennai, Tamil Nadu 600042",
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=...",
   mapPlaceholder: "./assets/images/map.jpg",
-  hours: "Mon - Fri: 9am - 6pm | Sat: By Appointment",
+  hours: "Mon - Sat: 10am - 8pm",
   doctor: {
-    name: "Dr. Rohit Srinivasan",
-    credentials: "BDS, PGDCD | Cosmetic Dentist",
-    experience: "13 Years Clinical Practice",
-    bio: "Expert in veneers, smile makeovers, and minimally invasive cosmetic dentistry using digital planning.",
-    imagePath: "./assets/images/doctor_chennai3.jpg"
+    name: "Dr. Kavitha Raman",
+    credentials: "BDS | Family & Preventive Dentistry",
+    experience: "11 Years Clinical Practice",
+    bio: "Focused on preventive care, painless treatments, and long-term dental health for children and adults.",
+    imagePath: "./assets/images/doctor_chennai2.jpg"
   }
 };
-
 
 export const SERVICES = [
   {
