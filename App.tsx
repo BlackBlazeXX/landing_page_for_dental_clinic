@@ -42,30 +42,29 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-mesh overflow-x-hidden" ref={containerRef}>
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative pt-12 pb-24 md:pt-24 md:pb-48 px-6 perspective-1000">
         <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[100px] animate-float -z-10"></div>
         <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-cyan-400/5 rounded-full blur-[100px] animate-float-delayed -z-10"></div>
 
         <div className="max-w-6xl mx-auto text-center relative stagger-load">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50/80 backdrop-blur-md text-blue-600 rounded-full text-sm font-semibold mb-8 border border-blue-100 hover:scale-105 transition-transform cursor-default shadow-sm">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50/80 backdrop-blur-md text-slate-600 rounded-full text-sm font-medium mb-8 border border-slate-200 cursor-default shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-500"></span>
             </span>
-            Accepting New Patients
+            Surgical & Esthetic Center
           </div>
-          
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            A Smile You'll <br className="hidden md:block" /> Love. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Pain-Free.</span>
+
+          <h1 className="text-4xl md:text-7xl font-semibold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Advanced <br className="hidden md:block" /> Restorative Medicine.
           </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Modern dentistry designed for people who dislike the dentist. 
-            Experience gentle, clinical excellence in a calm environment.
+
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Specialized care for complex dental rehabilitation. <br />
+            Full sedation protocols available for anxiety-free treatment.
           </p>
-          
+
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <Button onClick={() => setIsModalOpen(true)} className="w-full md:w-auto text-lg scale-105">
               Book Appointment
@@ -102,18 +101,18 @@ const App: React.FC = () => {
       {/* 2. PROBLEM -> RELIEF SECTION */}
       <section className="py-24 bg-slate-50 border-y border-slate-100 px-6 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center reveal">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12">We understand the fear.</h2>
+          <h2 className="text-2xl md:text-4xl font-semibold mb-12 text-slate-800">Patient-Centered Protocols.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="p-8 bg-white rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-200 group hover:shadow-2xl transition-all duration-500 reveal" style={{ transitionDelay: '100ms' }}>
-              <h3 className="text-xl font-bold mb-4 text-red-500 transform group-hover:-translate-y-1 transition-transform">The Problem</h3>
-              <p className="text-slate-600 leading-relaxed italic">
-                "I've had bad experiences before. I'm worried about the pain, the cost, and being judged for my dental health."
+            <div className="p-8 bg-white rounded-2xl border border-slate-200 reveal" style={{ transitionDelay: '100ms' }}>
+              <h3 className="text-lg font-semibold mb-4 text-slate-900">The Challenge</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Complex dental history often involves anxiety, past treatment failures, and functional compromise.
               </p>
             </div>
-            <div className="p-8 bg-white rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-blue-100 group hover:shadow-2xl transition-all duration-500 reveal" style={{ transitionDelay: '200ms' }}>
-              <h3 className="text-xl font-bold mb-4 text-blue-600 transform group-hover:-translate-y-1 transition-transform">The Lumina Relief</h3>
-              <p className="text-slate-600 leading-relaxed italic">
-                "We listen first. No judgment, no rushing. With advanced sedation and gentle techniques, you're always in control."
+            <div className="p-8 bg-slate-50 rounded-2xl border border-slate-200 reveal" style={{ transitionDelay: '200ms' }}>
+              <h3 className="text-lg font-semibold mb-4 text-slate-900">The Clinical Standard</h3>
+              <p className="text-slate-600 leading-relaxed">
+                We utilize a diagnostic-first approach with optional IV sedation to ensure safety, precision, and absolute comfort.
               </p>
             </div>
           </div>
@@ -126,29 +125,29 @@ const App: React.FC = () => {
           <div className="flex-1 perspective-1000 reveal">
             <div className="relative group card-3d">
               <div className="absolute inset-0 bg-blue-100 rounded-[3rem] rotate-6 -z-10 group-hover:rotate-12 transition-transform duration-700"></div>
-              <img 
-                src={CLINIC_INFO.doctor.imagePath} 
-                alt={CLINIC_INFO.doctor.name} 
+              <img
+                src={CLINIC_INFO.doctor.imagePath}
+                alt={CLINIC_INFO.doctor.name}
                 className="rounded-[3rem] shadow-2xl w-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl border border-white/50 shadow-xl hidden md:block animate-float group-hover:scale-105 transition-transform">
-                <p className="font-bold text-slate-900 text-lg">Top Rated Expert</p>
-                <p className="text-blue-600 font-medium">{CLINIC_INFO.doctor.name}</p>
+                <p className="font-semibold text-slate-900 text-sm">Clinical Director</p>
+                <p className="text-slate-500 text-sm">{CLINIC_INFO.doctor.name}</p>
               </div>
             </div>
           </div>
           <div className="flex-1 reveal" style={{ transitionDelay: '200ms' }}>
-            <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Lead Clinician</span>
-            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-2">{CLINIC_INFO.doctor.name}</h2>
-            <p className="text-blue-600 text-xl mb-8 font-medium">{CLINIC_INFO.doctor.credentials}</p>
-            <p className="text-xl text-slate-600 leading-relaxed mb-10">
+            <span className="text-slate-500 font-medium uppercase tracking-widest text-xs">Head of Prosthodontics</span>
+            <h2 className="text-3xl md:text-5xl font-semibold mt-4 mb-2 text-slate-900">{CLINIC_INFO.doctor.name}</h2>
+            <p className="text-slate-500 text-lg mb-8 font-medium">{CLINIC_INFO.doctor.credentials}</p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-10">
               {CLINIC_INFO.doctor.bio}
             </p>
             <div className="space-y-4 mb-12">
               {[
-                "Global Dental Excellence Awardee",
-                "Specialist in Minimally Invasive Surgery",
-                "Member of the ADA & AAID"
+                "Board Certified Specialist",
+                "Fellow of the International Congress of Oral Implantologists",
+                "ADA & AAID Member"
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-4 group reveal" style={{ transitionDelay: `${300 + (idx * 100)}ms` }}>
                   <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -167,8 +166,8 @@ const App: React.FC = () => {
       <section className="py-24 px-6 bg-slate-50 perspective-1000">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 reveal">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Precision Services</h2>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">Specialized treatments for life-changing outcomes, using the world's most advanced dental equipment.</p>
+            <h2 className="text-3xl md:text-5xl font-semibold mb-6">Clinical Disciplines</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">Focused interventions for long-term oral health and function.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {SERVICES.map((s, idx) => (
@@ -194,9 +193,9 @@ const App: React.FC = () => {
       {/* 5. REVIEWS */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-           <div className="text-center mb-16 reveal">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Loved by our patients.</h2>
-            <p className="text-xl text-slate-500">Real stories from real people who were once afraid.</p>
+          <div className="text-center mb-16 reveal">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-slate-900">Patient Outcomes.</h2>
+            <p className="text-lg text-slate-500">Restoring function and confidence.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {REVIEWS.map((r, i) => (
@@ -207,7 +206,7 @@ const App: React.FC = () => {
                 <p className="text-slate-700 text-lg leading-relaxed mb-8 italic relative z-10 group-hover:text-slate-900 transition-colors">"{r.text}"</p>
                 <p className="font-bold text-slate-900 text-lg">— {r.name}</p>
                 <div className="absolute top-10 right-10 text-slate-200/50 group-hover:text-blue-100 group-hover:rotate-12 transition-all duration-700">
-                  <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H19.017C21.2261 3 23.017 4.79086 23.017 7V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1.017 21L1.017 18C1.017 16.8954 1.91243 16 3.017 16H6.017C6.56929 16 7.017 15.5523 7.017 15V9C7.017 8.44772 6.56929 8 6.017 8H3.017C1.91243 8 1.017 7.10457 1.017 6V5C1.017 3.89543 1.91243 3 3.017 3H6.017C8.22614 3 10.017 4.79086 10.017 7V15C10.017 18.3137 7.33071 21 4.017 21H1.017Z"/></svg>
+                  <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H19.017C21.2261 3 23.017 4.79086 23.017 7V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1.017 21L1.017 18C1.017 16.8954 1.91243 16 3.017 16H6.017C6.56929 16 7.017 15.5523 7.017 15V9C7.017 8.44772 6.56929 8 6.017 8H3.017C1.91243 8 1.017 7.10457 1.017 6V5C1.017 3.89543 1.91243 3 3.017 3H6.017C8.22614 3 10.017 4.79086 10.017 7V15C10.017 18.3137 7.33071 21 4.017 21H1.017Z" /></svg>
                 </div>
               </div>
             ))}
@@ -221,7 +220,7 @@ const App: React.FC = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
-              <h2 className="text-4xl md:text-6xl font-bold mb-10 leading-tight reveal" style={{ transitionDelay: '100ms' }}>Painless Tech. <br />Hospital-Grade Safety.</h2>
+              <h2 className="text-3xl md:text-5xl font-semibold mb-10 leading-tight reveal" style={{ transitionDelay: '100ms' }}>Precision Technology. <br />Sterile Protocols.</h2>
               <div className="space-y-10">
                 {[
                   {
@@ -229,18 +228,18 @@ const App: React.FC = () => {
                     desc: "Exceeding hospital standards for patient safety and clinical hygiene.",
                     icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   },
-                 {
-  title: "Digital Diagnostics",
-  desc: "Ultra-low radiation imaging and digital scans. No messy molds.",
-  icon: (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M15 12a3 3 0 11-6 0 3 3 0 ..." // make sure the full path string is present
-    />
-  ),
-},
+                  {
+                    title: "Digital Diagnostics",
+                    desc: "Ultra-low radiation imaging and digital scans. No messy molds.",
+                    icon: (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 ..." // make sure the full path string is present
+                      />
+                    ),
+                  },
                   {
                     title: "Painless Anesthesia",
                     desc: "Computer-guided delivery for localized, immediate, and painless numbing.",
@@ -276,11 +275,16 @@ const App: React.FC = () => {
       <section className="py-32 px-6 bg-blue-600 text-white text-center relative overflow-hidden group reveal">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px] -translate-y-1/2 group-hover:bg-white/10 transition-colors duration-1000"></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-5xl md:text-8xl font-bold mb-10 italic tracking-tighter hover:scale-105 transition-transform duration-700 cursor-default reveal">Your First Step is Free.</h2>
-          <p className="text-2xl md:text-3xl mb-16 opacity-90 leading-relaxed font-light reveal" style={{ transitionDelay: '150ms' }}>Book a New Patient Consultation today. We'll perform a full digital scan and personalized plan at zero cost to you.</p>
-          <div className="bg-white/10 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white/20 mb-16 shadow-2xl hover:bg-white/20 transition-all duration-500 hover:scale-[1.02] reveal" style={{ transitionDelay: '300ms' }}>
-            <h3 className="text-4xl font-bold mb-4 tracking-tight">Full First Visit: $0</h3>
-            <p className="text-xl opacity-80 font-medium tracking-wide uppercase">Digital X-Rays • Comprehensive Scan • Expert Plan</p>
+          <h2 className="text-4xl md:text-6xl font-semibold mb-10 tracking-tight cursor-default reveal">Begin Your Restoration.</h2>
+          <p className="text-xl md:text-2xl mb-16 opacity-90 leading-relaxed font-light reveal" style={{ transitionDelay: '150ms' }}>
+            We invite you to a comprehensive diagnostic consultation. <br />
+            Includes 3D CBCT imaging, clinical examination, and a detailed treatment roadmap.
+          </p>
+          <div className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10 mb-16 reveal" style={{ transitionDelay: '300ms' }}>
+            <h3 className="text-2xl font-medium mb-4">The Consultation Process</h3>
+            <p className="text-lg opacity-80 font-light">
+              1. Diagnostics & Imaging &nbsp;•&nbsp; 2. Specialist Review &nbsp;•&nbsp; 3. Financial & Treatment Planning
+            </p>
           </div>
           <div className="reveal" style={{ transitionDelay: '450ms' }}>
             <Button variant="secondary" onClick={() => setIsModalOpen(true)} className="w-full md:w-auto text-2xl px-16 py-8 shadow-2xl scale-110">
@@ -316,23 +320,23 @@ const App: React.FC = () => {
               </a>
             </div>
           </div>
-          <div 
+          <div
             className="group relative perspective-1000 cursor-pointer reveal"
             style={{ transitionDelay: '400ms' }}
             onClick={() => setIsMapActive(true)}
           >
             <div className="h-[600px] w-full bg-slate-100 rounded-[3rem] overflow-hidden relative border border-slate-200 shadow-2xl card-3d">
-              <iframe 
+              <iframe
                 src={CLINIC_INFO.mapEmbedUrl}
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className={`grayscale-[0.5] contrast-[1.1] transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105 ${isMapActive ? 'pointer-events-auto' : 'pointer-events-none'}`}
               />
-              
+
               <div className="absolute bottom-6 left-6 glass px-6 py-4 rounded-2xl border border-white/50 shadow-xl pointer-events-none z-20 group-hover:-translate-y-2 transition-transform">
                 <p className="text-slate-900 font-bold">Lumina Dental Clinic</p>
                 <p className="text-sm text-slate-500">Free valet parking for patients</p>
@@ -364,7 +368,7 @@ const App: React.FC = () => {
       {/* MOBILE STICKY CTA */}
       <div className={`md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-xl border-t border-slate-100 transition-all duration-700 z-50 ${showSticky ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
         <Button onClick={() => setIsModalOpen(true)} className="w-full text-xl py-6 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-          Claim Free Consultation
+          Request Diagnostic Appointment
         </Button>
       </div>
 
