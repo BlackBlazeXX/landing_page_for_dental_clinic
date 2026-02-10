@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Lumina Dental | Pain-Free Modern Dentistry & Smile Design</title>
+    <meta name="title" content="Lumina Dental | Pain-Free Modern Dentistry & Smile Design" />
+    <meta name="description" content="Experience world-class, pain-free dentistry at Lumina Dental. Specialized in dental implants, clear aligners, and cosmetic smile design in a relaxing spa-like environment." />
+    <meta name="keywords" content="dentist, pain-free dentistry, dental implants, clear aligners, cosmetic dentistry, smile design, gentle dentist, Lumina Dental" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href="https://luminadental.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luminadental.com/" />
+    <meta property="og:title" content="Lumina Dental | Pain-Free Modern Dentistry" />
+    <meta property="og:description" content="Modern dentistry designed for people who dislike the dentist. Experience gentle, clinical excellence in a calm environment." />
+    <meta property="og:image" content="https://luminadental.com/assets/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://luminadental.com/" />
+    <meta property="twitter:title" content="Lumina Dental | Pain-Free Modern Dentistry" />
+    <meta property="twitter:description" content="Modern dentistry designed for people who dislike the dentist. Experience gentle, clinical excellence in a calm environment." />
+    <meta property="twitter:image" content="https://luminadental.com/assets/images/og-image.jpg" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+      :root {
+        --fluid-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .bg-gradient-mesh {
+        background-color: #ffffff;
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(202,100%,92%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(190,100%,95%,1) 0, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(210,100%,98%,1) 0, transparent 50%);
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .card-3d {
+        transition: transform 0.6s var(--fluid-easing), box-shadow 0.6s var(--fluid-easing);
+        transform-style: preserve-3d;
+      }
+      .card-3d:hover {
+        transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale(1.02);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.12);
+      }
+      
+      .link-underline {
+        position: relative;
+      }
+      .link-underline::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: currentColor;
+        transform-origin: bottom right;
+        transition: transform 0.4s var(--fluid-easing);
+      }
+      .link-underline:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* Reveal System */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        transition: opacity 1s var(--fluid-easing), transform 1s var(--fluid-easing);
+        will-change: opacity, transform;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-25px) rotate(3deg); }
+      }
+      .animate-float {
+        animation: float 8s ease-in-out infinite;
+      }
+      .animate-float-delayed {
+        animation: float 10s ease-in-out infinite 2s;
+      }
+      
+      .stagger-load > * {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1.2s var(--fluid-easing) forwards;
+      }
+      @keyframes slideUp {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+    <!-- Modern ESM Import Map via CDN -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react/": "https://esm.sh/react@18.2.0/",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-slate-900">
+    <div id="root"></div>
+    <!-- Entry point -->
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
