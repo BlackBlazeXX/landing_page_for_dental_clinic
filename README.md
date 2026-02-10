@@ -55,26 +55,55 @@ The most reliable "top to bottom" method:
 
 ### 1. Update Clinic Information
 All primary clinic details (Name, Phone, WhatsApp, Address, Doctor Info) are located in `constants.ts`. 
-- Open `constants.ts`.
-- Change `CLINIC_INFO` values to match your clinic.
-- Update `SERVICES` list to match your actual offerings.
-- Replace `REVIEWS` with real testimonials from your Google My Business page.
+1.  **Open** the file `constants.ts`.
+2.  **Edit** the values inside `CLINIC_INFO`.
+    *   *Example:* Change `name: "Lumina Dental"` to `name: "Your Clinic Name"`.
+3.  **Update** the `SERVICES` list to match your actual treatments.
+4.  **Replace** the `REVIEWS` array with real testimonials from your Google My Business or other platforms.
 
 ### 2. Replace Images
-The site uses placeholders. To use your actual clinic photos:
-- In `App.tsx`, search for `img src=...`.
-- Replace the URL with your hosted image link or local path.
-- Recommended: Use professional, brightly lit, high-resolution photos of the clinic and doctor.
+The site uses placeholder images. You must replace them with your own high-quality photos to build trust.
+1.  **Place your photos** in the `./assets/images/` folder (create it if it doesn't exist) or use any public URL.
+2.  **Update References in `constants.ts`**:
+    *   Look for `imagePath` under `CLINIC_INFO.doctor`.
+    *   Replace `"./assets/images/doctor.jpg"` with your actual file path or URL.
+3.  **Update Map Placeholder**:
+    *   In `constants.ts`, update `mapPlaceholder` with a screenshot of your clinic's location on a map.
+4.  **Update Tech/Office Photos**:
+    *   Open `App.tsx`.
+    *   Search for `img src=`.
+    *   Replace the `src` value with your specific image path (e.g., `./assets/images/clinic-interior.jpg`).
+    *   *Tip:* Use professional, brightly lit, high-resolution photos.
 
 ### 3. Configure Backend / Forms
-The forms currently use a simulated backend in `services/api.ts`.
-- **To add real email notifications:** You will need a backend service (like Node.js with Nodemailer or a service like Formspree/EmailJS).
-- Replace the code inside `apiService` in `services/api.ts` with a `fetch()` call to your API endpoint.
+The forms currently use a simulated backend in `services/api.ts` for demonstration.
+
+**Option A: The Easiest Way (Formspree)**
+1.  Go to [Formspree.io](https://formspree.io/) and create a free account.
+2.  Create a new form and copy your unique **Project ID** or **Endpoint URL**.
+3.  Open `components/BookingModal.tsx`.
+4.  Replace the `handleSubmit` logic to `fetch` your Formspree URL:
+    ```javascript
+    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    ```
+
+**Option B: Custom Backend**
+1.  Navigate to `services/api.ts`.
+2.  Inside `submitAppointment`, remove the `setTimeout` simulation.
+3.  Add your own `fetch()` call to your API endpoint (Node.js, Python, PHP, etc.).
 
 ### 4. Update WhatsApp Link
-- In `constants.ts`, update `whatsapp: "+15550001234"` (use international format without the `+` or spaces for the link logic).
+This controls the "Direct Message" button.
+1.  Open `constants.ts`.
+2.  Find the `whatsapp` field inside `CLINIC_INFO`.
+3.  **Format:** Use your country code + phone number with **NO** plus signs, dashes, or spaces.
+    *   *Correct:* `"15551234567"` (for US +1 555-123-4567)
+    *   *Incorrect:* `"+1 (555) 123-4567"`
 
-## Folder Structure
 - `/components`: Reusable UI elements like buttons, modals, and sections.
 - `/services`: Logic for API calls and backend communication.
 - `App.tsx`: The main layout assembly.
