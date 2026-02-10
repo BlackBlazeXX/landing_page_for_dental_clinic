@@ -16,7 +16,7 @@ export const CLINIC_INFO = {
     credentials: "BDS | Family & Preventive Dentistry",
     experience: "11 Years Clinical Practice",
     bio: "Focused on preventive care, painless treatments, and long-term dental health for children and adults.",
-    imagePath: "./assets/images/doctor_chennai2.jpg"
+    imagePath: "assets/images/doctor_chennai2.jpg"
   }
 };
 
