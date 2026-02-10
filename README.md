@@ -14,7 +14,7 @@ Follow these steps to take this project from your local machine to a live URL.
 ### 2. Configuration & Branding
 Before deploying, ensure the site reflects your clinic's details:
 - **Constants**: Open `constants.ts` and update `CLINIC_INFO`, `SERVICES`, and `REVIEWS`.
-- **Images**: Place your actual clinic photos in `./assets/images/`. Update the paths in `constants.ts` (e.g., `doctor.jpg`, `tech-room.jpg`).
+- **Images**: Place your actual clinic photos in `public/assets/images/`. Update the paths in `constants.ts` (e.g., `doctor.jpg`, `tech-room.jpg`).
 - **Favicon**: Replace the default favicon in the root directory with your brand logo.
 
 ### 3. Environment Variables
@@ -63,16 +63,16 @@ All primary clinic details (Name, Phone, WhatsApp, Address, Doctor Info) are loc
 
 ### 2. Replace Images
 The site uses placeholder images. You must replace them with your own high-quality photos to build trust.
-1.  **Place your photos** in the `./assets/images/` folder (create it if it doesn't exist) or use any public URL.
+1.  **Place your photos** in the `public/assets/images` folder (create it if it doesn't exist) or use any public URL.
 2.  **Update References in `constants.ts`**:
     *   Look for `imagePath` under `CLINIC_INFO.doctor`.
-    *   Replace `"./assets/images/doctor.jpg"` with your actual file path or URL.
+    *   Replace `"./assets/images/doctor.jpg"` with your actual file path or URL (e.g., `"assets/images/my-photo.jpg"`).
 3.  **Update Map Placeholder**:
     *   In `constants.ts`, update `mapPlaceholder` with a screenshot of your clinic's location on a map.
 4.  **Update Tech/Office Photos**:
     *   Open `App.tsx`.
     *   Search for `img src=`.
-    *   Replace the `src` value with your specific image path (e.g., `./assets/images/clinic-interior.jpg`).
+    *   Replace the `src` value with your specific image path (e.g., `assets/images/clinic-interior.jpg`).
     *   *Tip:* Use professional, brightly lit, high-resolution photos.
 
 ### 3. Configure Backend / Forms
